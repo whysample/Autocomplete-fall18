@@ -94,6 +94,9 @@ public class Term implements Comparable<Term> {
 				if (e>v.myWord.length()-1&&e<w.myWord.length()-1) {
 					return -1;
 				}
+				if (e>v.myWord.length()-1&&e>w.myWord.length()-1) {
+					return 0;
+				}
 				if (e<v.myWord.length()-1&&e>w.myWord.length()-1) {
 					return 1;
 				}
