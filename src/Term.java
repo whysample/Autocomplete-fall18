@@ -90,20 +90,26 @@ public class Term implements Comparable<Term> {
 		 */
 		public int compare(Term v, Term w) {
 			int size=this.myPrefixSize;
+			if(size>v.myWord.length()) {
+				size=v.myWord.length();
+			}
+			if(size>w.myWord.length()) {
+				size=w.myWord.length();
+			}
 			for (int e=0;e<size;e++) {
-				if (e>v.myWord.length()-1&&e<w.myWord.length()-1) {
-					return -1;
-				}
-				if (e>v.myWord.length()-1&&e>w.myWord.length()-1) {
-					return 0;
-				}
-				if (e<v.myWord.length()-1&&e>w.myWord.length()-1) {
-					return 1;
-				}
 				if (v.myWord.charAt(e)>(w.myWord.charAt(e))){
 					return 1;
 				}
 				if (v.myWord.charAt(e)<(w.myWord.charAt(e))){
+					return -1;
+				}
+			}
+			if(size<this.myPrefixSize)
+			{
+				if(v.myWord.length()>w.myWord.length()) {
+					return 1;
+				}
+				if(v.myWord.length()<w.myWord.length()) {
 					return -1;
 				}
 			}

@@ -109,14 +109,10 @@ public class BinarySearchAutocomplete implements Autocompletor {
 			throw new NullPointerException("prefix is null "+prefix);
 		}
 		Comparator<Term> co = new Term.PrefixOrder(prefix.length());
-		Term r=new Term(prefix,k);
+		Term r=new Term(prefix,0);
 		ArrayList<Term> list = new ArrayList<>();
 		int first= firstIndexOf(this.myTerms,r, co);
 		int last= lastIndexOf(this.myTerms,r,co);
-		System.out.println(prefix);
-		for(int a=0;a<list.size();a++) {
-			System.out.println("here"+myTerms[a]);
-		}
 		for(int q=first;q<last;q++) {
 			list.add(myTerms[q]);
 			System.out.println(myTerms[q]);
