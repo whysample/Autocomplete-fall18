@@ -89,12 +89,9 @@ public class BinarySearchLibrary {
 				low=mid;
 			}
 		}
-		if (low==list.size()||low<0) {
-			return -1;
-		}
 		T m2= list.get(low);
 		
-		if (comp.compare(m2,target)==0) {
+		if (m2.equals(target)) {
 			return low;
 		}
 		return -1;
