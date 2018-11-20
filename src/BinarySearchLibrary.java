@@ -50,7 +50,7 @@ public class BinarySearchLibrary {
 				high=mid;
 			}
 		}
-		if(high<0 || high>list.size()-1) {
+		if(high<0 || high>list.size()) {
 			return -1;
 		}
 		T m2= list.get(high);
