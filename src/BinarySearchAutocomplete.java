@@ -113,8 +113,13 @@ public class BinarySearchAutocomplete implements Autocompletor {
 		ArrayList<Term> list = new ArrayList<>();
 		int first= firstIndexOf(this.myTerms,r, co);
 		int last= lastIndexOf(this.myTerms,r,co);
+		System.out.println(prefix);
+		for(int a=0;a<list.size();a++) {
+			System.out.println("here"+myTerms[a]);
+		}
 		for(int q=first;q<last;q++) {
 			list.add(myTerms[q]);
+			System.out.println(myTerms[q]);
 		}
 		Comparator<Term> co1= new Term.ReverseWeightOrder();
 		Collections.sort(list, co1);
