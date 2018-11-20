@@ -90,7 +90,12 @@ public class Term implements Comparable<Term> {
 		 */
 		public int compare(Term v, Term w) {
 			int size=this.myPrefixSize;
-			
+			if (v.myWord.length()<size) {
+				size=v.myWord.length();
+			}
+			if (w.myWord.length()<size) {
+				size=w.myWord.length();
+			}
 			for (int e=0;e<size;e++) {
 				if (v.myWord.charAt(e)>(w.myWord.charAt(e))){
 					return 1;
