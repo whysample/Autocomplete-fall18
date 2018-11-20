@@ -90,13 +90,13 @@ public class Term implements Comparable<Term> {
 		 */
 		public int compare(Term v, Term w) {
 			int size=this.myPrefixSize;
-			if (v.myWord.length()<size) {
-				size=v.myWord.length();
-			}
-			if (w.myWord.length()<size) {
-				size=w.myWord.length();
-			}
 			for (int e=0;e<size;e++) {
+				if (e>v.myWord.length()-1&&e<w.myWord.length()-1) {
+					return -1;
+				}
+				if (e<v.myWord.length()-1&&e>w.myWord.length()-1) {
+					return 1;
+				}
 				if (v.myWord.charAt(e)>(w.myWord.charAt(e))){
 					return 1;
 				}
@@ -104,7 +104,6 @@ public class Term implements Comparable<Term> {
 					return -1;
 				}
 			}
-			
 			return 0;
 		}
 	
