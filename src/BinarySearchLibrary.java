@@ -50,6 +50,9 @@ public class BinarySearchLibrary {
 				high=mid;
 			}
 		}
+		if(high<0 || high>list.size()-1) {
+			return -1;
+		}
 		T m2= list.get(high);
 		if (comp.compare(m2,target)==0) {
 			return high;
@@ -73,7 +76,7 @@ public class BinarySearchLibrary {
 	int lastIndex(List<T> list, 
                	  T target, Comparator<T> comp) {
 		
-		if (list.size()==0) {
+		if (list.size==0) {
 			return -1;
 		}
 		
