@@ -90,7 +90,8 @@ public class BinarySearchAutocomplete implements Autocompletor {
 	 * prefix (including if no words exist), then the array instead contains all
 	 * those words. e.g. If terms is {air:3, bat:2, bell:4, boy:1}, then
 	 * topKMatches("b", 2) should return {"bell", "bat"}, but topKMatches("a",
-	 * 2) should return {"air"}
+	 * 2) should return {"air"}. This helps to identify the top weights of terms in myTerms that is 
+	 * the same as the prefix. 
 	 * 
 	 * @param prefix
 	 *            - A prefix which all returned words must start with
@@ -113,16 +114,9 @@ public class BinarySearchAutocomplete implements Autocompletor {
 		ArrayList<Term> list = new ArrayList<>();
 		int first= firstIndexOf(this.myTerms,r, co);
 		int last= lastIndexOf(this.myTerms,r,co);
-		System.out.println(prefix);
-		System.out.println(first);
-		System.out.println(last);
-		for(int w=0;w<myTerms.length;w++) {
-			System.out.println("this"+myTerms[w]);
-		}
 		if(first!=-1) {
 			for(int q=first;q<last+1;q++) {
 				list.add(myTerms[q]);
-				System.out.println(myTerms[q]);
 			}
 		}
 		else {

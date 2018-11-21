@@ -2,6 +2,18 @@ Put your name and netid here
 
 (1) Run the program BenchmarkForAutocomplete and copy/paste the 
 results here this for #matches = 20
+search	size	#match	binary	brute
+	456976	20	0.2433	0.0130
+a	17576	20	0.0066	0.0094
+b	17576	20	0.0068	0.0074
+c	17576	20	0.0069	0.0053
+x	17576	20	0.0061	0.0048
+y	17576	20	0.0061	0.0048
+z	17576	20	0.0048	0.0073
+aa	676	20	0.0002	0.0063
+az	676	20	0.0001	0.0056
+za	676	20	0.0002	0.0071
+zz	676	20	0.0002	0.0047
 
 (2) Run the program again for #matches = 10000, paste the results, 
 and then make any conclusions about how the # matches 
